@@ -15,6 +15,8 @@ var dateFormat = require('dateformat');
 
 const debugLog = false;
 
+const PORT = process.env.PORT || 3000;
+
 //You don't need to change this if you use the init function. But it is recommended if you can't trust your local network.
 var groupKey = Buffer.from("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","hex");
 var groupId =  Buffer.from("0000000000000000","hex");
