@@ -16,10 +16,12 @@ var dateFormat = require('dateformat');
 const debugLog = false;
 
 const PORT = process.env.PORT || 3000;
+const GROUPKEY = process.env.GROUPKEY || "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+const GROUPID = process.env.GROUPID || "0000000000000000";
 
 //You don't need to change this if you use the init function. But it is recommended if you can't trust your local network.
-var groupKey = Buffer.from("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","hex");
-var groupId =  Buffer.from("0000000000000000","hex");
+var groupKey = Buffer.from(GROUPKEY,"hex");
+var groupId =  Buffer.from(GROUPID,"hex");
 
 const acceptHeader = "application/vnd.miele.v1+json";
 
@@ -181,8 +183,8 @@ app.get('/*', function(req, response){
    }
 });
 
-http.listen(3000, function(){
-    console.log('listening on *:3000');
+http.listen(PORT, function(){
+    console.log('listening on *:' + PORT);
 });
 
 var getCurrentTimeInHttpFormat = function() {
