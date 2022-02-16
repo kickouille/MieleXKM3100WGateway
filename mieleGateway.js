@@ -13,7 +13,7 @@ const request = require('superagent');
 const crypto = require('crypto');
 var dateFormat = require('dateformat');
 
-const debugLog = false;
+const debugLog = process.env.DEBUG || false;
 
 const PORT = process.env.PORT || 3000;
 const GROUPKEY = process.env.GROUPKEY || "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
